@@ -1,0 +1,9 @@
+---
+- name: Stop VM
+  import_playbook: pve_qemu_stop.yaml
+
+- name: Delete VM
+  import_playbook: pve_qemu_delete.yaml
+
+- name: Remove zabbix host entry
+  import_playbook: zabbix_host_remove.yaml

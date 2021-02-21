@@ -1,0 +1,128 @@
+{
+     "job_templates": [
+          {
+               "name": "PVE Qemu Clone",
+               "description": "",
+               "job_type": "run",
+               "playbook": "pve_qemu_clone.yaml",
+               "scm_branch": "",
+               "forks": 0,
+               "limit": "",
+               "verbosity": 0,
+               "extra_vars": "---\nnode: pve01\nvmid:\nvm_name:\nbase_image:",
+               "job_tags": "",
+               "force_handlers": false,
+               "skip_tags": "",
+               "start_at_task": "",
+               "timeout": 0,
+               "use_fact_cache": false,
+               "host_config_key": "",
+               "ask_scm_branch_on_launch": false,
+               "ask_diff_mode_on_launch": false,
+               "ask_variables_on_launch": false,
+               "ask_limit_on_launch": false,
+               "ask_tags_on_launch": false,
+               "ask_skip_tags_on_launch": false,
+               "ask_job_type_on_launch": false,
+               "ask_verbosity_on_launch": false,
+               "ask_inventory_on_launch": false,
+               "ask_credential_on_launch": false,
+               "survey_enabled": true,
+               "become_enabled": false,
+               "diff_mode": false,
+               "allow_simultaneous": false,
+               "custom_virtualenv": null,
+               "job_slice_count": 1,
+               "webhook_service": "",
+               "webhook_credential": null,
+               "inventory": {
+                    "organization": {
+                         "name": "ainoniwa.net",
+                         "type": "organization"
+                    },
+                    "name": "localhost",
+                    "type": "inventory"
+               },
+               "project": {
+                    "organization": {
+                         "name": "ainoniwa.net",
+                         "type": "organization"
+                    },
+                    "name": "Proxmox VE - VM service",
+                    "type": "project"
+               },
+               "related": {
+                    "labels": [],
+                    "credentials": [
+                         {
+                              "organization": {
+                                   "name": "ainoniwa.net",
+                                   "type": "organization"
+                              },
+                              "name": "pve.ainoniwa.net",
+                              "credential_type": {
+                                   "name": "Proxmox VE API",
+                                   "kind": "cloud",
+                                   "type": "credential_type"
+                              },
+                              "type": "credential"
+                         }
+                    ],
+                    "schedules": [],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": [],
+                    "survey_spec": {
+                         "name": "",
+                         "description": "",
+                         "spec": [
+                              {
+                                   "question_name": "VM ID",
+                                   "question_description": "",
+                                   "required": true,
+                                   "type": "integer",
+                                   "variable": "vmid",
+                                   "min": 8000,
+                                   "max": 8999,
+                                   "default": "",
+                                   "choices": "",
+                                   "new_question": true
+                              },
+                              {
+                                   "question_name": "Name",
+                                   "question_description": "",
+                                   "required": true,
+                                   "type": "text",
+                                   "variable": "vm_name",
+                                   "min": 0,
+                                   "max": 1024,
+                                   "default": "NewVM",
+                                   "choices": "",
+                                   "new_question": false
+                              },
+                              {
+                                   "question_name": "Base image",
+                                   "question_description": "",
+                                   "required": true,
+                                   "type": "multiplechoice",
+                                   "variable": "base_image",
+                                   "min": 0,
+                                   "max": 1024,
+                                   "default": "centos7",
+                                   "choices": "centos7\nubuntu1804\nubuntu2004",
+                                   "new_question": true
+                              }
+                         ]
+                    }
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "ainoniwa.net",
+                         "type": "organization"
+                    },
+                    "name": "PVE Qemu Clone",
+                    "type": "job_template"
+               }
+          }
+     ]
+}

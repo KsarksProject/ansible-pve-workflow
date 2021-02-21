@@ -1,0 +1,20 @@
+---
+- name: Get token
+  uri:
+    url: "{{ lookup('env', 'PVE_API_ENDPOINT') }}/api2/json/access/ticket"
+    method: POST
+    body_format: json
+    body:
+      username: "{{ lookup('env', 'PVE_API_USERNAME') }}"
+      password: "{{ lookup('env', 'PVE_API_PASSWORD') }}"
+    status_code: 200
+  register: res
+
+- name: Set token to fact
+  set_fact:
+    token: "{{ res.json }}"
+
+- name: Set token to stats
+  set_stats:
+    data:
+      token: "{{ res.json }}"

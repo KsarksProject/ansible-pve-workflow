@@ -1,0 +1,10 @@
+---
+- hosts: qemu_{{ vmid }}
+  roles:
+    - role: community.zabbix.zabbix_agent
+      zabbix_agent_version: 5.0
+      zabbix_agent_server: "{{ zabbix_server }}"
+      zabbix_agent_serveractive: "{{ zabbix_server }}"
+      zabbix_agent_become_on_localhost: false
+      zabbix_agent_hostname: "{{ vm_name }}"
+      zabbix_agent_hostmetadata: ansible_role_linux

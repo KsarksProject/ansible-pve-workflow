@@ -1,0 +1,9 @@
+---
+- name: Clone VM
+  import_playbook: pve_qemu_clone.yaml
+
+- name: Configure VM
+  import_playbook: pve_qemu_config.yaml
+
+- name: Start VM
+  import_playbook: pve_qemu_start.yaml

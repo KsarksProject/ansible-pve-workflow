@@ -1,0 +1,7 @@
+---
+# update inventory after vm cloned
+# https://docs.ansible.com/ansible/latest/collections/ansible/builtin/meta_module.html
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - meta: refresh_inventory

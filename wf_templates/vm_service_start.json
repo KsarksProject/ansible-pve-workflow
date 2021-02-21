@@ -1,0 +1,438 @@
+{
+     "workflow_job_templates": [
+          {
+               "name": "VM service start",
+               "description": "",
+               "extra_vars": "---\nnode: pve01",
+               "survey_enabled": true,
+               "allow_simultaneous": false,
+               "ask_variables_on_launch": false,
+               "limit": "",
+               "scm_branch": "",
+               "ask_inventory_on_launch": false,
+               "ask_scm_branch_on_launch": false,
+               "ask_limit_on_launch": false,
+               "webhook_service": "",
+               "webhook_credential": null,
+               "organization": {
+                    "name": "ainoniwa.net",
+                    "type": "organization"
+               },
+               "inventory": {
+                    "organization": {
+                         "name": "ainoniwa.net",
+                         "type": "organization"
+                    },
+                    "name": "localhost",
+                    "type": "inventory"
+               },
+               "related": {
+                    "schedules": [],
+                    "workflow_nodes": [
+                         {
+                              "extra_data": {},
+                              "inventory": null,
+                              "scm_branch": null,
+                              "job_type": null,
+                              "job_tags": null,
+                              "skip_tags": null,
+                              "limit": null,
+                              "diff_mode": null,
+                              "verbosity": null,
+                              "all_parents_must_converge": false,
+                              "identifier": "285cfd2d-d2e1-4251-af48-eec88addaade",
+                              "workflow_job_template": {
+                                   "organization": {
+                                        "name": "ainoniwa.net",
+                                        "type": "organization"
+                                   },
+                                   "name": "VM service start",
+                                   "type": "workflow_job_template"
+                              },
+                              "unified_job_template": {
+                                   "organization": {
+                                        "name": "ainoniwa.net",
+                                        "type": "organization"
+                                   },
+                                   "name": "PVE Qemu Clone",
+                                   "type": "job_template"
+                              },
+                              "related": {
+                                   "credentials": [],
+                                   "success_nodes": [
+                                        {
+                                             "workflow_job_template": {
+                                                  "organization": {
+                                                       "name": "ainoniwa.net",
+                                                       "type": "organization"
+                                                  },
+                                                  "name": "VM service start",
+                                                  "type": "workflow_job_template"
+                                             },
+                                             "identifier": "815bd260-033e-4d14-b6e6-459f0f6606b4",
+                                             "type": "workflow_job_template_node"
+                                        }
+                                   ],
+                                   "failure_nodes": [],
+                                   "always_nodes": []
+                              },
+                              "natural_key": {
+                                   "workflow_job_template": {
+                                        "organization": {
+                                             "name": "ainoniwa.net",
+                                             "type": "organization"
+                                        },
+                                        "name": "VM service start",
+                                        "type": "workflow_job_template"
+                                   },
+                                   "identifier": "285cfd2d-d2e1-4251-af48-eec88addaade",
+                                   "type": "workflow_job_template_node"
+                              }
+                         },
+                         {
+                              "extra_data": {},
+                              "inventory": null,
+                              "scm_branch": null,
+                              "job_type": null,
+                              "job_tags": null,
+                              "skip_tags": null,
+                              "limit": null,
+                              "diff_mode": null,
+                              "verbosity": null,
+                              "all_parents_must_converge": false,
+                              "identifier": "1c290b1e-cf8a-4b7f-add8-974e13067636",
+                              "workflow_job_template": {
+                                   "organization": {
+                                        "name": "ainoniwa.net",
+                                        "type": "organization"
+                                   },
+                                   "name": "VM service start",
+                                   "type": "workflow_job_template"
+                              },
+                              "unified_job_template": {
+                                   "organization": {
+                                        "name": "ainoniwa.net",
+                                        "type": "organization"
+                                   },
+                                   "name": "PVE Qemu Delete",
+                                   "type": "job_template"
+                              },
+                              "related": {
+                                   "credentials": [],
+                                   "success_nodes": [],
+                                   "failure_nodes": [],
+                                   "always_nodes": []
+                              },
+                              "natural_key": {
+                                   "workflow_job_template": {
+                                        "organization": {
+                                             "name": "ainoniwa.net",
+                                             "type": "organization"
+                                        },
+                                        "name": "VM service start",
+                                        "type": "workflow_job_template"
+                                   },
+                                   "identifier": "1c290b1e-cf8a-4b7f-add8-974e13067636",
+                                   "type": "workflow_job_template_node"
+                              }
+                         },
+                         {
+                              "extra_data": {},
+                              "inventory": null,
+                              "scm_branch": null,
+                              "job_type": null,
+                              "job_tags": null,
+                              "skip_tags": null,
+                              "limit": null,
+                              "diff_mode": null,
+                              "verbosity": null,
+                              "all_parents_must_converge": false,
+                              "identifier": "51abdbc0-a00a-4af5-9603-a0f27090edb4",
+                              "workflow_job_template": {
+                                   "organization": {
+                                        "name": "ainoniwa.net",
+                                        "type": "organization"
+                                   },
+                                   "name": "VM service start",
+                                   "type": "workflow_job_template"
+                              },
+                              "unified_job_template": {
+                                   "organization": {
+                                        "name": "ainoniwa.net",
+                                        "type": "organization"
+                                   },
+                                   "name": "PVE Qemu Start",
+                                   "type": "job_template"
+                              },
+                              "related": {
+                                   "credentials": [],
+                                   "success_nodes": [],
+                                   "failure_nodes": [
+                                        {
+                                             "workflow_job_template": {
+                                                  "organization": {
+                                                       "name": "ainoniwa.net",
+                                                       "type": "organization"
+                                                  },
+                                                  "name": "VM service start",
+                                                  "type": "workflow_job_template"
+                                             },
+                                             "identifier": "4675c29f-0457-4888-9305-f5344e31f2da",
+                                             "type": "workflow_job_template_node"
+                                        }
+                                   ],
+                                   "always_nodes": []
+                              },
+                              "natural_key": {
+                                   "workflow_job_template": {
+                                        "organization": {
+                                             "name": "ainoniwa.net",
+                                             "type": "organization"
+                                        },
+                                        "name": "VM service start",
+                                        "type": "workflow_job_template"
+                                   },
+                                   "identifier": "51abdbc0-a00a-4af5-9603-a0f27090edb4",
+                                   "type": "workflow_job_template_node"
+                              }
+                         },
+                         {
+                              "extra_data": {},
+                              "inventory": null,
+                              "scm_branch": null,
+                              "job_type": null,
+                              "job_tags": null,
+                              "skip_tags": null,
+                              "limit": null,
+                              "diff_mode": null,
+                              "verbosity": null,
+                              "all_parents_must_converge": false,
+                              "identifier": "4675c29f-0457-4888-9305-f5344e31f2da",
+                              "workflow_job_template": {
+                                   "organization": {
+                                        "name": "ainoniwa.net",
+                                        "type": "organization"
+                                   },
+                                   "name": "VM service start",
+                                   "type": "workflow_job_template"
+                              },
+                              "unified_job_template": {
+                                   "organization": {
+                                        "name": "ainoniwa.net",
+                                        "type": "organization"
+                                   },
+                                   "name": "PVE Qemu Delete",
+                                   "type": "job_template"
+                              },
+                              "related": {
+                                   "credentials": [],
+                                   "success_nodes": [],
+                                   "failure_nodes": [],
+                                   "always_nodes": []
+                              },
+                              "natural_key": {
+                                   "workflow_job_template": {
+                                        "organization": {
+                                             "name": "ainoniwa.net",
+                                             "type": "organization"
+                                        },
+                                        "name": "VM service start",
+                                        "type": "workflow_job_template"
+                                   },
+                                   "identifier": "4675c29f-0457-4888-9305-f5344e31f2da",
+                                   "type": "workflow_job_template_node"
+                              }
+                         },
+                         {
+                              "extra_data": {},
+                              "inventory": null,
+                              "scm_branch": null,
+                              "job_type": null,
+                              "job_tags": null,
+                              "skip_tags": null,
+                              "limit": null,
+                              "diff_mode": null,
+                              "verbosity": null,
+                              "all_parents_must_converge": false,
+                              "identifier": "815bd260-033e-4d14-b6e6-459f0f6606b4",
+                              "workflow_job_template": {
+                                   "organization": {
+                                        "name": "ainoniwa.net",
+                                        "type": "organization"
+                                   },
+                                   "name": "VM service start",
+                                   "type": "workflow_job_template"
+                              },
+                              "unified_job_template": {
+                                   "organization": {
+                                        "name": "ainoniwa.net",
+                                        "type": "organization"
+                                   },
+                                   "name": "PVE Qemu Config",
+                                   "type": "job_template"
+                              },
+                              "related": {
+                                   "credentials": [],
+                                   "success_nodes": [
+                                        {
+                                             "workflow_job_template": {
+                                                  "organization": {
+                                                       "name": "ainoniwa.net",
+                                                       "type": "organization"
+                                                  },
+                                                  "name": "VM service start",
+                                                  "type": "workflow_job_template"
+                                             },
+                                             "identifier": "51abdbc0-a00a-4af5-9603-a0f27090edb4",
+                                             "type": "workflow_job_template_node"
+                                        }
+                                   ],
+                                   "failure_nodes": [
+                                        {
+                                             "workflow_job_template": {
+                                                  "organization": {
+                                                       "name": "ainoniwa.net",
+                                                       "type": "organization"
+                                                  },
+                                                  "name": "VM service start",
+                                                  "type": "workflow_job_template"
+                                             },
+                                             "identifier": "1c290b1e-cf8a-4b7f-add8-974e13067636",
+                                             "type": "workflow_job_template_node"
+                                        }
+                                   ],
+                                   "always_nodes": []
+                              },
+                              "natural_key": {
+                                   "workflow_job_template": {
+                                        "organization": {
+                                             "name": "ainoniwa.net",
+                                             "type": "organization"
+                                        },
+                                        "name": "VM service start",
+                                        "type": "workflow_job_template"
+                                   },
+                                   "identifier": "815bd260-033e-4d14-b6e6-459f0f6606b4",
+                                   "type": "workflow_job_template_node"
+                              }
+                         }
+                    ],
+                    "labels": [],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": [],
+                    "notification_templates_approvals": [],
+                    "survey_spec": {
+                         "name": "",
+                         "description": "",
+                         "spec": [
+                              {
+                                   "question_name": "VM ID",
+                                   "question_description": "",
+                                   "required": true,
+                                   "type": "integer",
+                                   "variable": "vmid",
+                                   "min": 8000,
+                                   "max": 8999,
+                                   "default": "",
+                                   "choices": "",
+                                   "new_question": true
+                              },
+                              {
+                                   "question_name": "VM name",
+                                   "question_description": "",
+                                   "required": true,
+                                   "type": "text",
+                                   "variable": "vm_name",
+                                   "min": 2,
+                                   "max": 64,
+                                   "default": "",
+                                   "choices": "",
+                                   "new_question": false
+                              },
+                              {
+                                   "question_name": "Base image",
+                                   "question_description": "",
+                                   "required": true,
+                                   "type": "multiplechoice",
+                                   "variable": "base_image",
+                                   "min": 0,
+                                   "max": 1024,
+                                   "default": "centos7",
+                                   "choices": "centos7\nubuntu1804\nubuntu2004",
+                                   "new_question": true
+                              },
+                              {
+                                   "question_name": "Username",
+                                   "question_description": "VM login username",
+                                   "required": true,
+                                   "type": "text",
+                                   "variable": "username",
+                                   "min": 2,
+                                   "max": 64,
+                                   "default": "",
+                                   "choices": "",
+                                   "new_question": true
+                              },
+                              {
+                                   "question_name": "Publickey",
+                                   "question_description": "",
+                                   "required": true,
+                                   "type": "textarea",
+                                   "variable": "publickey",
+                                   "min": 0,
+                                   "max": 1024,
+                                   "default": "ssh-rsa ...",
+                                   "choices": "",
+                                   "new_question": true
+                              },
+                              {
+                                   "question_name": "IP address",
+                                   "question_description": "",
+                                   "required": true,
+                                   "type": "text",
+                                   "variable": "ip_address",
+                                   "min": 0,
+                                   "max": 64,
+                                   "default": "",
+                                   "choices": "",
+                                   "new_question": true
+                              },
+                              {
+                                   "question_name": "CPU cores",
+                                   "question_description": "",
+                                   "required": false,
+                                   "type": "integer",
+                                   "variable": "cores",
+                                   "min": 1,
+                                   "max": 8,
+                                   "default": 1,
+                                   "choices": "",
+                                   "new_question": true
+                              },
+                              {
+                                   "question_name": "Memory",
+                                   "question_description": "",
+                                   "required": false,
+                                   "type": "integer",
+                                   "variable": "memory",
+                                   "min": 512,
+                                   "max": 8192,
+                                   "default": 512,
+                                   "choices": "",
+                                   "new_question": false
+                              }
+                         ]
+                    }
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "ainoniwa.net",
+                         "type": "organization"
+                    },
+                    "name": "VM service start",
+                    "type": "workflow_job_template"
+               }
+          }
+     ]
+}

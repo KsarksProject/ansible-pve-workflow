@@ -1,0 +1,15 @@
+# VM clone parameters
+node: pve01
+vmid: 8001
+vm_name: ansible-wf-clone-test
+base_image: centos7
+# Full clone
+#full: true
+#storage: rdb_vm
+
+# VM config parameters
+cores: 2
+memory: 1500
+username: example
+publickey: ssh-rsa AAAA...
+ip_address: 192.168.1.201

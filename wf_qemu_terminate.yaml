@@ -1,0 +1,6 @@
+---
+- name: Stop VM
+  import_playbook: pve_qemu_stop.yaml
+
+- name: Delete VM
+  import_playbook: pve_qemu_delete.yaml

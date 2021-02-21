@@ -1,0 +1,7 @@
+{
+    "newid": "{{ vmid }}",
+    "target": "{{ node }}",
+    {% if vm_name is defined and vm_name|length %}"name": "{{ vm_name }}",{% endif %}
+    {% if full is defined and full|length %}"full": true,{% endif %}
+    {% if storage is defined and storage|length %}"storage": "{{ storage }}",{% endif %}
+}

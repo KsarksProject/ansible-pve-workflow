@@ -1,0 +1,37 @@
+---
+- hosts: localhost
+  gather_facts: no
+  connection: local
+  vars:
+    pve_templates: "{{ lookup('file', 'pve_templates.yaml') | from_yaml }}"
+  tasks:
+    - name: Get the API token if not have it
+      # NOTE: include_tasks is dynamic include
+      include_tasks: tasks/pve_get_token.yaml  
+      when: token is not defined
+
+    - name: Clone VM
+      uri:
+        url: "{{ lookup('env', 'PVE_API_ENDPOINT') }}/api2/json/nodes/{{ node }}/qemu/{{ pve_templates[base_image] }}/clone"
+        method: POST
+        headers:
+          Cookie: PVEAuthCookie={{ token.data.ticket }}
+          CSRFPreventionToken: "{{ token.data.CSRFPreventionToken }}"
+        body_format: json
+        body: "{{ lookup('template', 'templates/pve_qemu_clone.j2') }}"
+        status_code: 200
+      register: clone_task
+
+    - name: Wait for clone task
+      uri:
+        url: "{{ lookup('env', 'PVE_API_ENDPOINT') }}/api2/json/nodes/{{ node }}/tasks/{{ clone_task.json.data }}/status"
+        method: GET
+        headers:
+          Cookie: PVEAuthCookie={{ token.data.ticket }}
+        status_code: 200
+      register: _result
+      until:
+        - _result.json.data.status == "stopped"
+        - _result.json.data.exitstatus == "OK"
+      retries: 60
+      delay: 10

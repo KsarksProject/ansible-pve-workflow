@@ -1,0 +1,21 @@
+# VM clone parameters
+node: pve01
+vmid: 8001
+vm_name: ansible-wf-clone-test
+base_image: centos7
+# Full clone
+#full: true
+#storage: rdb_vm
+
+# VM config parameters
+cores: 2
+memory: 1500
+username: example
+publickey: ssh-rsa AAAA...
+ip_address: 192.168.1.201
+
+# Zabbix parameters
+zabbix_server: 192.168.1.11
+zabbix_url: http://zabbix.example.com
+zabbix_api_user: Admin
+zabbix_api_password: password

@@ -1,0 +1,7 @@
+{
+    {% if username is defined and username|length %}"ciuser": "{{ username }}",{% endif %}
+    {% if publickey is defined and publickey|length %}"sshkeys": "{{ publickey|urlencode|replace('/', '%2F') }}",{% endif %}
+    {% if ip_address is defined and ip_address|length %}"ipconfig0": "ip={{ ip_address }}/24,gw=192.168.1.1",{% endif %}
+    {% if cores is defined and cores > 0 %}"cores": "{{ cores }}",{% endif %}
+    {% if memory is defined and memory > 0 %}"memory": "{{ memory }}",{% endif %}
+}

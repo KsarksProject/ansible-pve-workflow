@@ -1,0 +1,21 @@
+---
+- name: Clone VM
+  import_playbook: pve_qemu_clone.yaml
+
+- name: Configure VM
+  import_playbook: pve_qemu_config.yaml
+
+- name: Start VM
+  import_playbook: pve_qemu_start.yaml
+
+- name: Refresh inventory (Only local run)
+  import_playbook: refresh_inventory.yaml
+
+- name: Wait VM connection
+  import_playbook: wait_connection.yaml
+
+- name: Install zabbix agent
+  import_playbook: zabbix_agent.yaml
+
+- name: Setting zabbix host
+  import_playbook: zabbix_host_config.yaml

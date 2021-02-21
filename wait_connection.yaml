@@ -1,0 +1,7 @@
+---
+- hosts: qemu_{{ vmid }}
+  gather_facts: no
+  tasks:
+    - wait_for_connection:
+        timeout: 300
+        sleep: 10

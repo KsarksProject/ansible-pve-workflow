@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  gather_facts: no 
+  tasks:
+    - name: Remove host setting
+      local_action:
+        module: community.zabbix.zabbix_host
+        server_url: "{{ zabbix_url }}"
+        login_user: "{{ zabbix_api_user }}"
+        login_password: "{{ zabbix_api_password }}"
+        host_name: "{{ vm_name }}"
+        status: disabled
+        state: absent
